@@ -13,13 +13,26 @@ body {
     font-weight: bold;
 }
 
+.card-container {
+    display: flex;
+    justify-content: space-around; /* Spread cards evenly */
+    overflow: hidden;
+    position: relative;
+    margin: 0 -10px; /* Adjust based on card margin */
+}
+
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    transition: transform 0.6s ease, z-index 0.6s ease;
+    margin: 0 10px;
+    width: 300px;
+    z-index: 1;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.2); /* Scale up the card */
+    /* z-index: 9000000; Bring the hovered card to the front */
+    margin: 0; /* Remove margin to cover more area */
 }
 
 footer {
