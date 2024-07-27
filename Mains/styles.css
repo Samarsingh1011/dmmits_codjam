@@ -1,3 +1,64 @@
+#overview{
+    font-family: "Workbench", sans-serif;
+    margin-right: 300px;
+    /* color: rgb(165,165,167);; */
+}
+#overview h2 {
+    font-size: 50px;
+    background-image: linear-gradient(red, blue);
+    color: transparent;
+    background-clip: text;
+
+}
+#overview p {
+    background-image: linear-gradient(rgb(178, 185, 157), rgb(83, 122, 151));
+    color: transparent;
+    background-clip: text;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.image-caption {
+    margin-top: 8px; /* Space between image and caption */
+    font-size: 14px; /* Adjust text size as needed */
+    color: #333; /* Adjust text color as needed */
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust this value as needed */
+    margin: 40px auto; /* Center the container horizontally */
+    overflow: hidden; /* Hide any overflow */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.side-by-side {
+    max-width: 40%;
+    height: auto;
+    
+}
+.image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        max-width: 100%; /* Make container responsive */
+        margin: 10px auto; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        max-width: 100%; /* Full width on very small screens */
+    }
+}
 
 .dropdown-menu {
     z-index: 1040; 
@@ -7,6 +68,8 @@
 }
 .hero-section {
     height: 80vh;
+    position: relative;
+    z-index: 2;
 
 }
 
@@ -33,9 +96,11 @@
     text-align: center; /* Centers the caption text */
 }
 #navv {
+    position: relative;
     background-color: rgb(9, 3, 22) !important;
     max-height: 100px;
     border-radius: 100px;
+    z-index: 1
 }
 #contact{
     background:  rgb(41, 39, 39) !important;
@@ -81,13 +146,14 @@ footer a:hover {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 800px) {
     .navbar-brand {
         font-size: 18px;
     }
 
     .img-fluid {
-        max-width: 80px;
+        position: relative;
+        max-width: auto;
     }
 
     .hero-section {
@@ -112,13 +178,15 @@ footer a:hover {
 
 
 body{
-   background: rgb(9, 3, 22) !important;
+    background: linear-gradient(170deg, rgba(9,3,22,1) 19%, rgba(45,15,65,1) 45%, rgba(62,1,94,1) 78%);
+    
 }
 .hero-section {
     max-height: 60vh;
     display: flex;
     position: relative;
     width: 50%;
+    padding-left: 30px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 15px;
@@ -127,15 +195,196 @@ body{
     width: 100vh;
     height: 100%;
     border-radius: 40px;
-
 }
 
 @media (max-width: 768px) {
     .hero-section {
         margin-left: 0;
         margin-right: 0;
+        top: 150px;
     }
 }
 .py-5{
     color: white;
+}
+
+.video-hero {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    z-index: 10;
+    overflow: hidden;
+    cursor: move; /* Indicate draggable functionality */
+    resize: both; /* Enable resizing */
+    overflow: auto; /* Show scrollbars if necessary */
+    box-sizing: border-box; /* Ensure resizing includes padding/border */
+    transition: top 0.2s ease, left 0.2s ease, width 0.2s ease, height 0.2s ease; /* Add transitions for resizing */
+}
+
+.hide-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 11;
+    border-radius: 5px;
+}
+
+.video-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide iframe {
+    width: 100%;
+    height: 230px;
+    border-radius: 40px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .video-hero {
+        max-width: 40%;
+        top: 100px; /* Keep consistent positioning */
+        right: 10px; /* Adjust for smaller screens */
+        position: fixed;
+    }
+
+    .carousel-slide iframe {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-hero {
+        width: 100%;
+        top: 100px; /* Keep consistent positioning */
+        right: 0; /* Adjust for very small screens */
+    }
+
+    .carousel-slide iframe {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-hero {
+        max-width: 40%;
+        top: 100px; /* Keep consistent positioning */
+        right: 10px; /* Adjust for smaller screens */
+    }
+
+    .carousel-slide iframe {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-hero {
+        width: 100%;
+        top: 100px; /* Keep consistent positioning */
+        right: 0; /* Adjust for very small screens */
+    }
+
+    .carousel-slide iframe {
+        height: 150px;
+    }
+}
+
+
+
+.video-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: gradient-shadow 5s infinite alternate;
+    z-index: 0;
+    pointer-events: none; 
+    border-radius: 20px;
+};
+@keyframes gradient-shadow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 150, 0.5), 0 0 20px rgba(0, 204, 255, 0.5);
+        border-radius: 20px;
+
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(255, 0, 150, 0.5), 0 0 40px rgba(0, 204, 255, 0.5);
+        border-radius: 20px;
+
+    }
+}
+
+
+.col-md-6{
+    padding-left: 200px;
+}
+
+
+
+
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-50px);
+    }
+    60% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Apply the bounce animation to the intro text */
+.bounce-animation {
+    animation: bounce 2s ease;
 }

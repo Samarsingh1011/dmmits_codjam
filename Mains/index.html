@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Upsurge</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Kalnia+Glaze:wght@100..700&family=Workbench&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Kalnia+Glaze:wght@100..700&family=Sixtyfour&family=Workbench&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navv">
@@ -18,17 +35,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto" id="fullist">
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li> -->
                     <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
                     <li class="nav-item"><a class="nav-link" href="#innovations">Innovations</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
@@ -38,6 +44,27 @@
         </div>
     </nav>
 
+    <!-- Video Hero Section -->
+    <div class="video-hero">
+        <header class="video-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="carousel-slide">
+                        <iframe src="https://www.youtube.com/embed/UwsrzCVZAb8?si=n6taGnWChwqo_KA8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-slide">
+                        <iframe src="https://www.youtube.com/embed/UwsrzCVZAb8?si=n6taGnWChwqo_KA8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-slide">
+                        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <button class="carousel-control prev">❮</button>
+                <button class="carousel-control next">❯</button>
+            </div>
+        </header>
+        <button class="hide-button" id="hideButton">Move</button>
+    </div>
     <header class="hero-section text-light">
         <div id="heroCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -82,10 +109,32 @@
         </div>
     </header>
 
+    <!-- Sources and Introduction Box Section -->
     <section id="overview" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">What is AI Upsurge?</h2>
-            <p class="text-center">AI Upsurge is an initiative to explore and highlight the most innovative and impactful AI technologies. Join us in discovering cutting-edge solutions and advancements.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Sources:</h2>
+                    <div class="image-container">
+                        <img src="../img_gif/ytb.png" alt="Youtube" class="side-by-side" id="ytb">
+                        <img src="../img_gif/wiki.png" alt="" class="side-by-side">
+                        <script>
+                            document.getElementById('ytb').addEventListener('click', function() {
+                                const img = this;
+                                console.log(img.src);
+                                img.src = img.src.includes('http://192.168.1.3:5500/img_gif/ytb.png') ? 'http://192.168.1.3:5500/img_gif/ytb_p.png' : 'http://192.168.1.3:5500/img_gif/ytb.png';
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="intro-box" id="intro">
+                        <h2 class="intro-title">Welcome to AI Upsurge</h2>
+                        <p class="intro-text">Discover cutting-edge innovations and projects in the field of artificial intelligence. Explore our latest research and developments that are shaping the future of AI.</p>
+                        <button href="#projects" class="btn btn-primary explore-button">Explore</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -169,32 +218,30 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
                 </div>
-                <button type="submit" class="btn btn-dark">Send Message</button>
+                <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-dark text-light py-3">
+    <footer class="bg-dark text-light py-4">
         <div class="container text-center">
-            <p>&copy; 2024 AI Upsurge. All rights reserved.</p>
-            <a href="#" class="mr-2">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <p class="mb-0">&copy; 2024 AI Upsurge. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
