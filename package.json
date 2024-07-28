@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "@google/generative-ai": "^0.16.0",
+    "bootstrap": "^5.3.3",
+    "googleapis": "^140.0.1"
   },
   "directories": {
     "doc": "docs"

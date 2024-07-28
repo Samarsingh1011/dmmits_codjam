@@ -1,10 +1,79 @@
-#overview{
-    font-family: "Workbench", sans-serif;
-    margin-right: 300px;
-    /* color: rgb(165,165,167);; */
+.chatbot-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed for spacing */
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+
+
 }
+.card{
+    border-radius: 30px;
+    background: linear-gradient(117deg, rgb(3, 30, 60) 14%, rgb(43, 73, 118) 30%, rgb(66, 58, 108) 83%);
+}
+#cardss{
+    border-radius: 30px;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: linear-gradient(117deg, rgba(3, 30, 60, 0.383) 14%, rgb(55, 83, 126) 30%, rgba(85, 73, 145, 0.604) 83%);
+}
+#chatbot-container.visible {
+    right: 20px; /* Slide into view */
+}
+
+#chatBox {
+    height: 100px; /* Adjust height as needed */
+    overflow-y: auto;
+    border: 1px solid #201919;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ebe0e0;
+    border-radius: 30px;
+}
+@font-face {
+    font-family: 'retro';
+    src: url('../Fonts/space_age/space\ age.ttf') format('truetype'); /* Adjust the path as necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+#overview{
+    font-family: "retro", sans-serif;
+    margin-right: 250px;
+    /* color: rgb(165,165,167);; */
+
+}
+.top-left-image {
+    position: absolute;
+    top: 80px; /* Adjust based on the height of your navbar */
+    left: 20px; /* Adjust based on your desired left padding */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.top-left-image img {
+    width: 600px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-6deg);
+    }
+    50% {
+        transform: rotate(6deg);
+    }
+}
+
+.top-left-image img:hover {
+    animation: wiggle 0.3s infinite;
+}
+
 #overview h2 {
-    font-size: 50px;
+    font-size: 40px;
     background-image: linear-gradient(red, blue);
     color: transparent;
     background-clip: text;
@@ -14,6 +83,7 @@
     background-image: linear-gradient(rgb(178, 185, 157), rgb(83, 122, 151));
     color: transparent;
     background-clip: text;
+    font-size: 20px;
 
 }
 body {
@@ -23,7 +93,7 @@ body {
 }
 .image-caption {
     margin-top: 8px; /* Space between image and caption */
-    font-size: 14px; /* Adjust text size as needed */
+    font-size: 10px; /* Adjust text size as needed */
     color: #333; /* Adjust text color as needed */
 }
 .image-container {
@@ -37,7 +107,7 @@ body {
     gap: 10px;
 }
 .side-by-side {
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
     
 }
@@ -114,7 +184,7 @@ body {
 }
 
 .img-fluid {
-    max-width: 120px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -387,4 +457,22 @@ body{
 /* Apply the bounce animation to the intro text */
 .bounce-animation {
     animation: bounce 2s ease;
+}
+
+
+.top-right-image {
+    position: absolute;
+    top: 20px; /* Adjust based on your desired top padding */
+    right: 20px; /* Adjust based on your desired right padding */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.top-right-image img {
+    width: 200px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.2s ease-in-out;
+}
+
+.top-right-image img:hover {
+    animation: wiggle 0.3s infinite;
 }

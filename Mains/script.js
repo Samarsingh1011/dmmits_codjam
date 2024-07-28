@@ -1,4 +1,18 @@
 // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    var chatbotContainer = document.getElementById('chatbot-container');
+    
+    document.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+
+        // Adjust the value based on where you want the chatbot to appear
+        if (scrollPosition > 200) {
+            chatbotContainer.classList.add('visible');
+        } else {
+            chatbotContainer.classList.remove('visible');
+        }
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const videoHero = document.querySelector('.video-hero');
@@ -193,4 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const overviewElement = document.getElementById('intro');
     overviewElement.classList.add('bounce-animation');
 });
+
+
 
