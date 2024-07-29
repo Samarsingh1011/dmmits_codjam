@@ -173,7 +173,7 @@ body {
     z-index: 1
 }
 #contact{
-    background:  rgb(41, 39, 39) !important;
+    background: linear-gradient(117deg, rgb(3, 30, 60) 14%, rgb(43, 73, 118) 30%, rgb(66, 58, 108) 83%);
 }
 .navbar-brand {
     font-size: 25px;
