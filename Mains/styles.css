@@ -1,3 +1,14 @@
+:root {
+    --bg-color-light: linear-gradient(170deg, rgba(9, 3, 22, 1) 19%, rgba(45, 15, 65, 1) 45%, rgba(62, 1, 94, 1) 78%);
+    --bg-color-dark: linear-gradient(117deg, rgba(67,140,219,1) 28%, rgba(90,133,152,1) 55%, rgba(173,170,186,1) 87%);
+
+    --text-color-light: #000;
+    --text-color-dark: #fff;
+
+    --card-bg-light: linear-gradient(117deg, rgb(3, 30, 60) 14%, rgb(43, 73, 118) 30%, rgb(66, 58, 108) 83%);
+    --card-bg-dark: linear-gradient(117deg, rgba(3, 30, 60, 0.383) 14%, rgb(55, 83, 126) 30%, rgba(85, 73, 145, 0.604) 83%);
+}
+
 .chatbot-wrapper {
     display: flex;
     justify-content: center;
@@ -90,6 +101,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark-mode {
+    background: var(--bg-color-dark);
+    color: var(--text-color-dark);
 }
 .image-caption {
     margin-top: 8px; /* Space between image and caption */
@@ -139,7 +157,7 @@ body {
 .hero-section {
     height: 80vh;
     position: relative;
-    z-index: 2;
+
 
 }
 
@@ -251,6 +269,7 @@ body{
     background: linear-gradient(170deg, rgba(9,3,22,1) 19%, rgba(45,15,65,1) 45%, rgba(62,1,94,1) 78%);
     
 }
+
 .hero-section {
     max-height: 60vh;
     display: flex;
@@ -475,4 +494,25 @@ body{
 
 .top-right-image img:hover {
     animation: wiggle 0.3s infinite;
+}
+
+
+#toggle-theme {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    width:90px;
+    height:30px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    
+}
+
+body.light-mode #toggle-theme {
+    background-color: #000;
+    color: #fff;
 }
