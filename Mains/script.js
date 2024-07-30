@@ -210,3 +210,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// Example JavaScript to remove the loading class after a delay
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.body.classList.remove('loading');
+        document.getElementById('main-content').style.display = 'block';
+    }, 3000); // Adjust the delay to match the loading animation duration
+});
